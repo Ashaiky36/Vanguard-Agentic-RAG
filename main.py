@@ -1,18 +1,25 @@
 import ollama 
-response = ollama.chat(model='mistral:latest', messages=[
+from pydantic import BaseModel
+
+class return_request(BaseModel):
+    intent : str = "return_request"
+    item_id : int
+    reason : str
+response = ollama.chat(model='mistral:latest', format= return_request.model_json_schema(), messages=[
     {
         'role' : 'system',
-        'content' : 'you are an helpful ai assistant with deep knowledge about health and skincare products. give concise answers to user questions and keep it simple and friendly tone. do not answer unrelated questions about politics or anything other than health and skincare. '
+        'content' : ' You are a data parser. Respond ONLY in valid JSON. No prose. No conversational filler. '
     },
 
     {
         'role' : 'user',
-        'content' : 'who would win this world cup?',
+        'content' : 'I want to return item #552 because it is does not fit me.',
     },
 ]) 
 # ], stream=True)
-
-print(response['message'] ['content'])
+item_return = return_request.model_validate_json(response.message.content)
+print(item_return)
+# print(response['message'] ['content'])
 # for chunk in ollama.chat(model='mistral:latest', messages=[
 #     {
 #         'role' : 'user',
