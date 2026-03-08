@@ -12,7 +12,7 @@ response = ollama.chat(model='mistral:latest', messages=[
 ]) 
 # ], stream=True)
 
-print(response['message'], ['content'])
+print(response['message'] ['content'])
 # for chunk in ollama.chat(model='mistral:latest', messages=[
 #     {
 #         'role' : 'user',
