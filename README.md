@@ -1,20 +1,3 @@
-For a project of this magnitude, you need a high-impact GitHub repository that screams "Professional Systems Architect." Below is the recommended structure, name, and a ready-to-use README description for your project.
-
-## 📁 Suggested Repository Name:
-
-`Vanguard-Agentic-RAG` or `CommerceSense-AI`
-
----
-
-## 📄 GitHub Description (About Section):
-
-> "A production-grade, model-agnostic Agentic RAG framework for E-commerce & Academia. Features autonomous tool-calling for order management, privacy-first local inference via Ollama, and real-time knowledge grounding with Crawl4AI."
-
----
-
-## 🛠️ The GitHub README Template
-
-*Copy and paste this into your `README.md` file.*
 
 # Vanguard: The Autonomous E-commerce Support Agent
 
